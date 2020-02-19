@@ -4,7 +4,7 @@ export let options = {
 	enabled: !NODE_DISABLE_COLORS && TERM !== 'dumb' && FORCE_COLOR !== '0'
 };
 
-function colorist(start: number, end: number) {
+function kolorist(start: number, end: number) {
 	const open = `\x1b[${start}m`;
 	const close = `\x1b[${end}m`;
 	const regex = new RegExp(`\\x1b\\[${end}m`, 'g');
@@ -15,49 +15,49 @@ function colorist(start: number, end: number) {
 }
 
 // modifiers
-export const reset = colorist(0, 0);
-export const bold = colorist(1, 22);
-export const dim = colorist(2, 22);
-export const italic = colorist(3, 23);
-export const underline = colorist(4, 24);
-export const inverse = colorist(7, 27);
-export const hidden = colorist(8, 28);
-export const strikethrough = colorist(9, 29);
+export const reset = kolorist(0, 0);
+export const bold = kolorist(1, 22);
+export const dim = kolorist(2, 22);
+export const italic = kolorist(3, 23);
+export const underline = kolorist(4, 24);
+export const inverse = kolorist(7, 27);
+export const hidden = kolorist(8, 28);
+export const strikethrough = kolorist(9, 29);
 
 // colors
-export const black = colorist(30, 39);
-export const red = colorist(31, 39);
-export const green = colorist(32, 39);
-export const yellow = colorist(33, 39);
-export const blue = colorist(34, 39);
-export const magenta = colorist(35, 39);
-export const cyan = colorist(36, 39);
-export const white = colorist(97, 39);
-export const gray = colorist(90, 39);
+export const black = kolorist(30, 39);
+export const red = kolorist(31, 39);
+export const green = kolorist(32, 39);
+export const yellow = kolorist(33, 39);
+export const blue = kolorist(34, 39);
+export const magenta = kolorist(35, 39);
+export const cyan = kolorist(36, 39);
+export const white = kolorist(97, 39);
+export const gray = kolorist(90, 39);
 
-export const lightGray = colorist(37, 39);
-export const lightRed = colorist(91, 39);
-export const lightGreen = colorist(92, 39);
-export const lightYellow = colorist(93, 39);
-export const lightBlue = colorist(94, 39);
-export const lightMagenta = colorist(95, 39);
-export const lightCyan = colorist(96, 39);
+export const lightGray = kolorist(37, 39);
+export const lightRed = kolorist(91, 39);
+export const lightGreen = kolorist(92, 39);
+export const lightYellow = kolorist(93, 39);
+export const lightBlue = kolorist(94, 39);
+export const lightMagenta = kolorist(95, 39);
+export const lightCyan = kolorist(96, 39);
 
 // background colors
-export const bgBlack = colorist(40, 49);
-export const bgRed = colorist(41, 49);
-export const bgGreen = colorist(42, 49);
-export const bgYellow = colorist(43, 49);
-export const bgBlue = colorist(44, 49);
-export const bgMagenta = colorist(45, 49);
-export const bgCyan = colorist(46, 49);
-export const bgWhite = colorist(107, 49);
-export const bgGray = colorist(100, 49);
+export const bgBlack = kolorist(40, 49);
+export const bgRed = kolorist(41, 49);
+export const bgGreen = kolorist(42, 49);
+export const bgYellow = kolorist(43, 49);
+export const bgBlue = kolorist(44, 49);
+export const bgMagenta = kolorist(45, 49);
+export const bgCyan = kolorist(46, 49);
+export const bgWhite = kolorist(107, 49);
+export const bgGray = kolorist(100, 49);
 
-export const bgLightRed = colorist(101, 49);
-export const bgLightGreen = colorist(102, 49);
-export const bgLightYellow = colorist(103, 49);
-export const bgLightBlue = colorist(104, 49);
-export const bgLightMagenta = colorist(105, 49);
-export const bgLightCyan = colorist(106, 49);
-export const bgLightGray = colorist(47, 49);
+export const bgLightRed = kolorist(101, 49);
+export const bgLightGreen = kolorist(102, 49);
+export const bgLightYellow = kolorist(103, 49);
+export const bgLightBlue = kolorist(104, 49);
+export const bgLightMagenta = kolorist(105, 49);
+export const bgLightCyan = kolorist(106, 49);
+export const bgLightGray = kolorist(47, 49);

@@ -1,4 +1,4 @@
-# colorist
+# kolorist
 
 Tiny library to put colors into stdin/stdout :tada:
 
@@ -7,11 +7,11 @@ Tiny library to put colors into stdin/stdout :tada:
 ## Usage
 
 ```bash
-npm install --save-dev colorist
+npm install --save-dev kolorist
 ```
 
 ```js
-const { red, cyan } = require('colorist');
+import { red, cyan } from 'kolorist';
 
 console.log(red(`Error: something failed in ${cyan('my-file.js')}.`));
 ```
@@ -25,7 +25,7 @@ You can also disable colors globally via the following environment variables:
 On top of that you can disable colors right from node:
 
 ```js
-import { options, red } from 'colorist';
+import { options, red } from 'kolorist';
 
 options.enabled = false;
 console.log(red('foo'));

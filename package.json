@@ -1,5 +1,5 @@
 {
-	"name": "colorist",
+	"name": "kolorist",
 	"version": "1.0.0",
 	"description": "A tiny utility to colorize stdin/stdout",
 	"main": "dist/cjs/index.js",
