@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"target": "ES2020",
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"outDir": "dist/cjs/",
+		"sourceMap": true,
+		"allowJs": true
+	},
+	"files": ["./src/index.ts"]
+}
