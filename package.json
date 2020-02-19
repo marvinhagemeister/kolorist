@@ -1,7 +1,7 @@
 {
 	"name": "colorist",
 	"version": "1.0.0",
-	"description": "",
+	"description": "A tiny utility to colorize stdin/stdout",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"types": "dist/types/index.d.ts",
