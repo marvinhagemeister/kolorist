@@ -29,7 +29,7 @@ import { options, red } from 'colorist';
 
 options.enabled = false;
 console.log(red('foo'));
-// Looks a string without colors
+// Logs a string without colors
 ```
 
 ### License
