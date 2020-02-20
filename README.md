@@ -32,6 +32,15 @@ console.log(red('foo'));
 // Logs a string without colors
 ```
 
+You can also strip colors from a string:
+
+```js
+import { red, stripColors } from 'kolorist';
+
+console.log(stripColors(red('foo')));
+// Logs 'foo'
+```
+
 ### License
 
 `MIT`, see [the license file](./LICENSE).

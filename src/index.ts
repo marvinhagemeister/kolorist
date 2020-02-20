@@ -14,6 +14,10 @@ function kolorist(start: number, end: number) {
 	};
 }
 
+export function stripColors(str: string) {
+	return str.replace(/\x1b\[\d+m/g, '');
+}
+
 // modifiers
 export const reset = kolorist(0, 0);
 export const bold = kolorist(1, 22);

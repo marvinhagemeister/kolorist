@@ -22,7 +22,9 @@ describe('colors', () => {
 
 	it('should print demo', () => {
 		const strs = Object.keys(k)
-			.filter(key => typeof (k as any)[key] === 'function')
+			.filter(
+				key => typeof (k as any)[key] === 'function' || key === 'stripColors'
+			)
 			.map(x => (k as any)[x]('foobar'));
 
 		const columns: string[][] = [];
@@ -43,5 +45,11 @@ describe('colors', () => {
 
 		k.options.enabled = true;
 		t.equal(k.cyan('foo'), '\u001b[36mfoo\u001b[39m');
+	});
+});
+
+describe('strip colors', () => {
+	it('should remove colors from string', () => {
+		t.equal(k.stripColors(k.red('foo')), 'foo');
 	});
 });
