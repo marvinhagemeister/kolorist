@@ -53,3 +53,19 @@ describe('strip colors', () => {
 		t.equal(k.stripColors(k.red('foo')), 'foo');
 	});
 });
+
+describe('links', () => {
+	it('should render links', () => {
+		t.equal(
+			k.link('my link', 'https://example.com'),
+			'\u001b]8;;https://example.com\u0007my link\u001b]8;;\u0007'
+		);
+
+		k.options.enabled = false;
+		t.equal(
+			k.link('my link', 'https://example.com'),
+			'my link (\u200Bhttps://example.com\u200B)'
+		);
+		k.options.enabled = true;
+	});
+});

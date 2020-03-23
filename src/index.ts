@@ -65,3 +65,14 @@ export const bgLightBlue = kolorist(104, 49);
 export const bgLightMagenta = kolorist(105, 49);
 export const bgLightCyan = kolorist(106, 49);
 export const bgLightGray = kolorist(47, 49);
+
+// Links
+const OSC = '\u001B]';
+const BEL = '\u0007';
+const SEP = ';';
+
+export function link(text: string, url: string) {
+	return options.enabled
+		? OSC + '8' + SEP + SEP + url + BEL + text + OSC + '8' + SEP + SEP + BEL
+		: `${text} (\u200B${url}\u200B)`;
+}
