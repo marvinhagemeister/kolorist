@@ -7,7 +7,7 @@
 	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"test": "mocha -r ts-node/register src/*.test.ts",
-		"build": "rimraf dist/ && tsc && tsc -p tsconfig.esm.json"
+		"build": "rimraf dist/ && tsc && tsc -p tsconfig.esm.json && node tools/post-build.js"
 	},
 	"author": "Marvin Hagemeister <hello@marvinh.dev>",
 	"repository": {
@@ -25,7 +25,7 @@
 	},
 	"exports": {
 		".": {
-			"import": "./dist/esm/index.js",
+			"import": "./dist/esm/index.mjs",
 			"require": "./dist/cjs/index.js"
 		},
 		"./package.json": "./package.json",
@@ -38,5 +38,6 @@
 	"prettier": {
 		"useTabs": true,
 		"singleQuote": true
-	}
+	},
+	"dependencies": {}
 }
