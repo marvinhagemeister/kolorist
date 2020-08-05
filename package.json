@@ -7,7 +7,8 @@
 	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"test": "mocha -r ts-node/register src/*.test.ts",
-		"build": "rimraf dist/ && tsc && tsc -p tsconfig.esm.json && node tools/post-build.js"
+		"build": "rimraf dist/ && tsc && tsc -p tsconfig.esm.json && node tools/post-build.js",
+		"prepublishOnly": "npm run build"
 	},
 	"author": "Marvin Hagemeister <hello@marvinh.dev>",
 	"repository": {
