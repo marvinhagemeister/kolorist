@@ -52,6 +52,10 @@ describe('strip colors', () => {
 	it('should remove colors from string', () => {
 		t.equal(k.stripColors(k.red('foo')), 'foo');
 	});
+
+	it('should strip link', () => {
+		t.equal(k.stripColors(k.link('foo', 'foo')), 'foo')
+	})
 });
 
 describe('links', () => {
