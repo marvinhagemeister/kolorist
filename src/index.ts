@@ -15,7 +15,9 @@ function kolorist(start: number, end: number) {
 }
 
 export function stripColors(str: string) {
-	return str.replace(/\x1b\[\d+m/g, '');
+	return str
+		.replace(/\x1b\[\d+m/g, '')
+		.replace(/\x1b\]8;;.*?\x07(.*?)\x1b\]8;;\x07/g, (_, group) => group);
 }
 
 // modifiers
