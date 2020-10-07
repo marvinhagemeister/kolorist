@@ -1,6 +1,6 @@
 {
 	"name": "kolorist",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"description": "A tiny utility to colorize stdin/stdout",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
