@@ -9,8 +9,10 @@ function kolorist(start: number, end: number) {
 	const close = `\x1b[${end}m`;
 	const regex = new RegExp(`\\x1b\\[${end}m`, 'g');
 
-	return (str: string) => {
-		return options.enabled ? open + str.replace(regex, open) + close : str;
+	return (str: string | number) => {
+		return options.enabled
+			? open + ('' + str).replace(regex, open) + close
+			: str;
 	};
 }
 
