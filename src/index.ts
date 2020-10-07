@@ -1,7 +1,7 @@
 const { FORCE_COLOR, NODE_DISABLE_COLORS, TERM } = process.env;
 
 export let options = {
-	enabled: !NODE_DISABLE_COLORS && TERM !== 'dumb' && FORCE_COLOR !== '0'
+	enabled: !NODE_DISABLE_COLORS && TERM !== 'dumb' && FORCE_COLOR !== '0',
 };
 
 function kolorist(start: number, end: number) {
@@ -14,8 +14,8 @@ function kolorist(start: number, end: number) {
 	};
 }
 
-export function stripColors(str: string) {
-	return str
+export function stripColors(str: string | number) {
+	return ('' + str)
 		.replace(/\x1b\[\d+m/g, '')
 		.replace(/\x1b\]8;;.*?\x07(.*?)\x1b\]8;;\x07/g, (_, group) => group);
 }
