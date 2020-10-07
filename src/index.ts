@@ -12,7 +12,7 @@ function kolorist(start: number, end: number) {
 	return (str: string | number) => {
 		return options.enabled
 			? open + ('' + str).replace(regex, open) + close
-			: str;
+			: '' + str;
 	};
 }
 
