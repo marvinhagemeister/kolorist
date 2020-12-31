@@ -1,7 +1,15 @@
-const { FORCE_COLOR, NODE_DISABLE_COLORS, TERM } = process.env;
+let enabled = true;
+if (process && process.env && process.stdout) {
+	const { FORCE_COLOR, NODE_DISABLE_COLORS, TERM } = process.env;
+	enabled =
+		!NODE_DISABLE_COLORS &&
+		TERM !== 'dumb' &&
+		FORCE_COLOR !== '0' &&
+		process.stdout.isTTY;
+}
 
 export let options = {
-	enabled: (!NODE_DISABLE_COLORS && TERM !== 'dumb' && FORCE_COLOR !== '0' && process.stdout.isTTY),
+	enabled,
 };
 
 function kolorist(start: number, end: number) {
