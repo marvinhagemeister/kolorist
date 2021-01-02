@@ -1,6 +1,17 @@
 let enabled = true;
-if (process && process.env && process.stdout) {
-	const { FORCE_COLOR, NODE_DISABLE_COLORS, TERM } = process.env;
+
+// Support both browser and node environments
+const globalVar =
+	typeof self !== 'undefined'
+		? self
+		: typeof window !== 'undefined'
+		? window
+		: typeof global !== 'undefined'
+		? global
+		: ({} as any);
+
+if (globalVar.process && globalVar.process.env && globalVar.process.stdout) {
+	const { FORCE_COLOR, NODE_DISABLE_COLORS, TERM } = globalVar.process.env;
 	enabled =
 		!NODE_DISABLE_COLORS &&
 		TERM !== 'dumb' &&
