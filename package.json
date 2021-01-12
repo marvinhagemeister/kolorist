@@ -3,11 +3,11 @@
 	"version": "1.2.9",
 	"description": "A tiny utility to colorize stdin/stdout",
 	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
+	"module": "dist/module/index.js",
 	"types": "dist/types/index.d.ts",
 	"scripts": {
 		"test": "mocha -r ts-node/register src/*.test.ts",
-		"build": "rimraf dist/ && tsc && tsc -p tsconfig.esm.json && node tools/post-build.js",
+		"build": "rimraf dist/ && tsc && tsc -p tsconfig.module.json && tsc -p tsconfig.esm.json && node tools/post-build.js",
 		"prepublishOnly": "npm run build"
 	},
 	"author": "Marvin Hagemeister <hello@marvinh.dev>",
