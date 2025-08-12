@@ -74,6 +74,7 @@ export let options = {
 	supportLevel,
 };
 
+/*@__NO_SIDE_EFFECTS__*/
 function kolorist(
 	start: number | string,
 	end: number | string,
