@@ -84,6 +84,17 @@ describe('colors', () => {
 			k.options.supportLevel = k.SupportLevel.ansi;
 			t.equal(JSON.stringify(k.ansi256(194)('foo')), JSON.stringify('foo'));
 		});
+
+		it('should keep a surrounding modifier active', () => {
+			t.equal(
+				k.dim(`foo ${k.ansi256(123)('bar')} baz`),
+				'\u001b[2mfoo \u001b[38;5;123mbar\u001b[39m baz\u001b[22m'
+			);
+			t.equal(
+				k.dim(`foo ${k.ansi256Bg(123)('bar')} baz`),
+				'\u001b[2mfoo \u001b[48;5;123mbar\u001b[49m baz\u001b[22m'
+			);
+		});
 	});
 
 	describe('TrueColor 24bit', () => {
@@ -122,6 +133,18 @@ describe('colors', () => {
 			k.options.supportLevel = k.SupportLevel.ansi256;
 			t.equal(k.trueColor(134, 239, 172)('foo'), k.ansi256(157)('foo'));
 			t.equal(k.trueColorBg(134, 239, 172)('foo'), k.ansi256Bg(157)('foo'));
+		});
+
+		it('should keep a surrounding modifier active', () => {
+			k.options.supportLevel = k.SupportLevel.trueColor;
+			t.equal(
+				k.dim(`foo ${k.trueColor(134, 239, 172)('bar')} baz`),
+				'\u001b[2mfoo \u001b[38;2;134;239;172mbar\u001b[39m baz\u001b[22m'
+			);
+			t.equal(
+				k.dim(`foo ${k.trueColorBg(134, 239, 172)('bar')} baz`),
+				'\u001b[2mfoo \u001b[48;2;134;239;172mbar\u001b[49m baz\u001b[22m'
+			);
 		});
 	});
 

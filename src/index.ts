@@ -174,20 +174,20 @@ export const bgLightGray = kolorist(47, 49);
 
 // 256 support
 export const ansi256 = (n: number) =>
-	kolorist('38;5;' + n, 0, SupportLevel.ansi256);
+	kolorist('38;5;' + n, 39, SupportLevel.ansi256);
 export const ansi256Bg = (n: number) =>
-	kolorist('48;5;' + n, 0, SupportLevel.ansi256);
+	kolorist('48;5;' + n, 49, SupportLevel.ansi256);
 
 // TrueColor 24bit support
 export const trueColor = (r: number, g: number, b: number) => {
 	return options.supportLevel === SupportLevel.ansi256
 		? ansi256(rgbToAnsi256(r, g, b))
-		: kolorist(`38;2;${r};${g};${b}`, 0, SupportLevel.trueColor);
+		: kolorist(`38;2;${r};${g};${b}`, 39, SupportLevel.trueColor);
 };
 export const trueColorBg = (r: number, g: number, b: number) => {
 	return options.supportLevel === SupportLevel.ansi256
 		? ansi256Bg(rgbToAnsi256(r, g, b))
-		: kolorist(`48;2;${r};${g};${b}`, 0, SupportLevel.trueColor);
+		: kolorist(`48;2;${r};${g};${b}`, 49, SupportLevel.trueColor);
 };
 
 // Links
